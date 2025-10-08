@@ -23,7 +23,7 @@ Welcome to my GitHub profile! Here's a little about me:
 
 
 ## Connect with Me
-- [LinkedIn](https://www.linkedin.com/in/username)
+- [LinkedIn](https://www.linkedin.com/in/jansen-7310b9354/)
 
 ## My Tech Stack
 - **Languages**: PHP, Java, Golang, Python, C++
