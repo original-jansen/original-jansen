@@ -26,6 +26,6 @@ Welcome to my GitHub profile! Here's a little about me:
 - [LinkedIn](https://www.linkedin.com/in/jansen-7310b9354/)
 
 ## My Tech Stack
-- **Languages**: PHP, Java, Golang, Python, C++
+- **Languages**: Java, Golang, PHP, C++
 - **Frameworks**: Spring Boot, Matplotlib
-- **Databases**: MySQL, MongoDB, APEX Oracle
+- **Databases**: MySQL, MongoDB, PostgreSQL
