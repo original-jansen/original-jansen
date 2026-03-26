@@ -19,7 +19,7 @@ Welcome to my GitHub profile! Here's a little about me:
 
 - 🔭 I’m currently working on various **backend development** projects, focusing on **PHP**, **Java** (Spring Boot), and **Golang**.
 - 🤔 I’m looking for help with **optimizing APIs** and **scalability** in microservices architecture.
-- 📫 How to reach me: You can email me at [yansenaja990@gmai.com](mailto:yansenaja990@gmail.com).
+- 📫 How to reach me: You can email me at [yansenaja990@gmail.com](mailto:yansenaja990@gmail.com).
 
 
 ## Connect with Me
