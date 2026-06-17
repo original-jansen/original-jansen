@@ -10,6 +10,9 @@
   --display: 'Archivo', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --sans: 'Space Grotesk', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --serif: 'Instrument Serif', Georgia, serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 :root[data-theme="dark"] {
@@ -402,10 +405,93 @@ main {
   .big-link .link-arrow { width: 18px; height: 18px; }
 }
 
+/* === Animations === */
+
+/* H1 line-by-line clip reveal */
+.display .line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+.display .line > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 900ms var(--ease-out);
+}
+body.loaded .display .line > span { transform: translateY(0); }
+body.loaded .display .line:nth-child(1) > span { transition-delay: 200ms; }
+body.loaded .display .line:nth-child(2) > span { transition-delay: 290ms; }
+body.loaded .display .line:nth-child(3) > span { transition-delay: 380ms; }
+
+/* Hero stagger: portrait → status → sub */
+.portrait,
+.eyebrow,
+.sub {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+body.loaded .portrait { opacity: 1; transform: translateY(0); transition-delay: 60ms; }
+body.loaded .eyebrow  { opacity: 1; transform: translateY(0); transition-delay: 140ms; }
+body.loaded .sub      { opacity: 1; transform: translateY(0); transition-delay: 560ms; }
+
+/* Section scroll reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+}
+[data-reveal].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Work list cascade once parent reveals */
+.works li {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+#work.in-view .works li {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(160ms + var(--i, 0) * 90ms);
+}
+
+/* Apply softer easing to existing hover transitions */
+.nav a::after,
+.works a,
+.works .arrow,
+.works .title,
+.big-link a,
+.big-link .link-arrow,
+.elsewhere a,
+.theme,
+.portrait {
+  transition-timing-function: var(--ease-out);
+}
+
+/* If JS hasn't run yet, don't keep things hidden forever */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .display .line > span,
+  .portrait, .eyebrow, .sub,
+  [data-reveal], .works li {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Fallback: if JS fails, body.loaded never sets — show after 1.2s via @keyframes safety */
+@media (scripting: none) {
+  .display .line > span,
+  .portrait, .eyebrow, .sub,
+  [data-reveal], .works li {
+    opacity: 1;
+    transform: none;
   }
 }
