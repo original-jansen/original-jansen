@@ -3,378 +3,277 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jansen — Backend Developer Portfolio" />
-  <title>jansen@portfolio: ~/</title>
+  <meta name="description" content="Jansen — Personal Portfolio" />
+  <title>Jansen · Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style2.css" />
 </head>
 
 <body>
-  <!-- IDE Window -->
-  <div class="ide">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Title Bar -->
-    <header class="titlebar">
-      <div class="window-controls" aria-hidden="true">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
-      </div>
-      <div class="titlebar-title">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-        </svg>
-        <span>jansen@portfolio: ~/projects</span>
-      </div>
-      <div class="titlebar-actions">
-        <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <!-- Tab Bar -->
-    <nav class="tabbar" aria-label="File tabs">
-      <a href="#hero" class="tab tab-active" data-target="hero">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        index.go
-      </a>
-      <a href="#about" class="tab" data-target="about">about.md</a>
-      <a href="#portfolio" class="tab" data-target="portfolio">projects.json</a>
-      <a href="#skills" class="tab" data-target="skills">skills.yml</a>
-      <a href="#contact" class="tab" data-target="contact">contact.sh</a>
+  <header class="topbar">
+    <a href="#main" class="brand">
+      <span class="brand-dot"></span>
+      <span>jansen</span>
+    </a>
+    <nav class="topnav" aria-label="Section navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </header>
 
-    <!-- Main Layout -->
-    <div class="layout">
+  <main id="main" class="bento">
 
-      <!-- Sidebar (file tree) -->
-      <aside class="sidebar" aria-label="Explorer">
-        <div class="sidebar-section">
-          <div class="sidebar-heading">EXPLORER</div>
-          <ul class="filetree">
-            <li class="folder open">
-              <svg class="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              <span>portfolio</span>
-            </li>
-            <li class="file file-active"><span class="dot-go"></span>index.go</li>
-            <li class="file"><span class="dot-md"></span>about.md</li>
-            <li class="file"><span class="dot-json"></span>projects.json</li>
-            <li class="file"><span class="dot-yml"></span>skills.yml</li>
-            <li class="file"><span class="dot-sh"></span>contact.sh</li>
-            <li class="file"><span class="dot-mod"></span>go.mod</li>
-            <li class="file"><span class="dot-md"></span>README.md</li>
-          </ul>
+    <!-- Greeting -->
+    <section class="card card-greeting" aria-labelledby="hero-h">
+      <p class="hand">Hi there,</p>
+      <h1 id="hero-h">I'm <span class="name">Jansen</span><span class="wave-emoji" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/><path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+        </svg>
+      </span></h1>
+      <p class="lead">An Information Systems student who likes building backend systems, clean data flows, and software that quietly does its job well.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary">
+          See my work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Say hi</a>
+      </div>
+    </section>
+
+    <!-- Avatar -->
+    <section class="card card-avatar" aria-label="Photo">
+      <img src="images/profiles.png" alt="Jansen smiling for a portrait" />
+      <div class="avatar-tag">
+        <span class="status-dot"></span>
+        Available for work
+      </div>
+    </section>
+
+    <!-- Now / Status -->
+    <section class="card card-now" aria-label="What I'm up to">
+      <p class="card-eyebrow">Currently</p>
+      <p class="now-text">Building small backend services in <strong>Go</strong> and learning more about scalable system design.</p>
+      <div class="now-meta">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          updated this week
+        </span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="card card-about" aria-labelledby="about-h">
+      <p class="card-eyebrow">About</p>
+      <h2 id="about-h">A few things about me</h2>
+      <p>I'm 20, studying Information Systems, and most days you'll find me deep in code or sketching out database schemas on paper. I care about software that's <em>simple</em>, <em>fast</em>, and <em>kind to the people maintaining it next year</em>.</p>
+      <p>Outside of class I tinker with Go, dig into Spring Boot, and brew a lot of coffee.</p>
+      <p class="hand-signature">— Jansen</p>
+    </section>
+
+    <!-- Quick facts -->
+    <section class="card card-facts" aria-label="Quick facts">
+      <p class="card-eyebrow">Quick facts</p>
+      <ul class="facts">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Indonesia</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          <span>IS Student, 20</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Backend leaning</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <span>Coffee, always</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Learning -->
+    <section class="card card-learning" aria-label="Currently learning">
+      <p class="card-eyebrow">Learning</p>
+      <div class="learn-list">
+        <div class="learn-row">
+          <span class="learn-name">System design</span>
+          <span class="learn-bar"><span style="width: 55%"></span></span>
         </div>
-        <div class="sidebar-section">
-          <div class="sidebar-heading">OUTLINE</div>
-          <ul class="outline">
-            <li><a href="#hero">› main()</a></li>
-            <li><a href="#about">› about</a></li>
-            <li><a href="#portfolio">› projects[]</a></li>
-            <li><a href="#skills">› skills[]</a></li>
-            <li><a href="#contact">› contact()</a></li>
-          </ul>
+        <div class="learn-row">
+          <span class="learn-name">Spring Boot</span>
+          <span class="learn-bar"><span style="width: 75%"></span></span>
         </div>
-      </aside>
+        <div class="learn-row">
+          <span class="learn-name">PostgreSQL</span>
+          <span class="learn-bar"><span style="width: 60%"></span></span>
+        </div>
+        <div class="learn-row">
+          <span class="learn-name">Docker</span>
+          <span class="learn-bar"><span style="width: 40%"></span></span>
+        </div>
+      </div>
+    </section>
 
-      <!-- Editor Area -->
-      <main class="editor">
-
-        <!-- Hero: terminal -->
-        <section id="hero" class="block">
-          <div class="terminal" aria-label="Terminal">
-            <div class="terminal-head">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-              <span class="terminal-title">zsh — jansen@portfolio</span>
-            </div>
-            <div class="terminal-body">
-              <p><span class="prompt">$</span> <span class="cmd">whoami</span></p>
-              <div class="hero-row">
-                <img src="images/profiles.png" alt="Jansen" class="avatar">
-                <div>
-                  <h1>Jansen <span class="wave" aria-hidden="true">_</span></h1>
-                  <p class="role">// Information Systems student · backend &amp; data systems</p>
-                  <p class="kv"><span class="k">location</span><span class="sep">=</span><span class="v">"Indonesia"</span></p>
-                  <p class="kv"><span class="k">stack</span><span class="sep">=</span><span class="v">["Golang", "Spring Boot", "PHP"]</span></p>
-                  <p class="kv"><span class="k">status</span><span class="sep">=</span><span class="v ok">"open to opportunities"</span></p>
-                </div>
-              </div>
-              <p><span class="prompt">$</span> <span class="cmd">cat intro.txt</span></p>
-              <p class="output">Backend developer building efficient, data-driven systems. I sweat the details on schemas, queries, and APIs that don't fall over at 2&nbsp;AM.</p>
-              <p>
-                <span class="prompt">$</span>
-                <a href="#portfolio" class="btn-cli">./view_projects.sh
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-                <span class="cursor" aria-hidden="true"></span>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="block code-block">
-          <div class="block-head">
-            <span class="block-name">about.md</span>
-            <span class="block-meta">42 lines · UTF-8 · Markdown</span>
-          </div>
-          <div class="code">
-            <div class="gutter">
-              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
-            </div>
-            <div class="content">
-              <h2 class="h-md"># About</h2>
-              <p class="line"></p>
-              <p class="line">I'm a <strong>20-year-old Information Systems student</strong> focused on backend</p>
-              <p class="line">development and data-driven systems.</p>
-              <p class="line"></p>
-              <p class="line">Hands-on with <code class="tk">Golang</code>, <code class="tk">Spring Boot</code>, and <code class="tk">PHP</code>. I enjoy</p>
-              <p class="line">designing efficient systems, modeling clean schemas,</p>
-              <p class="line">and writing services that age well.</p>
-              <p class="line"></p>
-              <p class="line">&gt; "Make it correct, then make it fast — never the other way around."</p>
-              <p class="line"></p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="portfolio" class="block code-block">
-          <div class="block-head">
-            <span class="block-name">projects.json</span>
-            <span class="block-meta">3 entries · JSON</span>
-          </div>
-          <div class="code">
-            <div class="gutter gutter-json">
-              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-            </div>
-            <div class="content">
-              <h2 class="visually-hidden">Projects</h2>
-              <div class="projects">
-
-                <article class="project-card">
-                  <header class="card-head">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                    <span class="card-name">donation-web</span>
-                  </header>
-                  <div class="card-body">
-                    <h3>Donation Management System</h3>
-                    <p>Web app for managing donations, users, and roles.</p>
-                    <div class="tags">
-                      <span class="tag">Spring Boot</span>
-                      <span class="tag">MySQL</span>
-                      <span class="tag">Java</span>
-                    </div>
-                    <a href="https://github.com/original-jansen/donation-web" target="_blank" rel="noopener" class="card-link">
-                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                      view source
-                      <svg class="icon arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                  </div>
-                </article>
-
-                <article class="project-card">
-                  <header class="card-head">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                    <span class="card-name">simple-CRUD</span>
-                  </header>
-                  <div class="card-body">
-                    <h3>Simple CRUD</h3>
-                    <p>CRUD app with a Go backend and MongoDB persistence, plain JS frontend.</p>
-                    <div class="tags">
-                      <span class="tag">Golang</span>
-                      <span class="tag">MongoDB</span>
-                      <span class="tag">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/original-jansen/simple-CRUD" target="_blank" rel="noopener" class="card-link">
-                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                      view source
-                      <svg class="icon arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                  </div>
-                </article>
-
-                <article class="project-card">
-                  <header class="card-head">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                    <span class="card-name">e-learning</span>
-                  </header>
-                  <div class="card-body">
-                    <h3>E-Learning Web</h3>
-                    <p>Interactive learning interface — responsive layout, components, navigation.</p>
-                    <div class="tags">
-                      <span class="tag">HTML</span>
-                      <span class="tag">CSS</span>
-                      <span class="tag">Bootstrap</span>
-                      <span class="tag">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/original-jansen/e-learning" target="_blank" rel="noopener" class="card-link">
-                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                      view source
-                      <svg class="icon arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                  </div>
-                </article>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="block code-block">
-          <div class="block-head">
-            <span class="block-name">skills.yml</span>
-            <span class="block-meta">YAML</span>
-          </div>
-          <div class="code">
-            <div class="gutter">
-              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
-            </div>
-            <div class="content">
-              <h2 class="visually-hidden">Skills</h2>
-              <p class="yml"><span class="yml-key">languages</span>:</p>
-              <div class="chip-row">
-                <span class="chip">Golang</span>
-                <span class="chip">Java</span>
-                <span class="chip">PHP</span>
-                <span class="chip">Python</span>
-                <span class="chip">C++</span>
-              </div>
-              <p class="yml"><span class="yml-key">frameworks</span>:</p>
-              <div class="chip-row">
-                <span class="chip">Spring Boot</span>
-                <span class="chip">Bootstrap</span>
-              </div>
-              <p class="yml"><span class="yml-key">data</span>:</p>
-              <div class="chip-row">
-                <span class="chip">SQL</span>
-                <span class="chip">MySQL</span>
-                <span class="chip">MongoDB</span>
-              </div>
-              <p class="yml"><span class="yml-key">web</span>:</p>
-              <div class="chip-row">
-                <span class="chip">HTML</span>
-                <span class="chip">CSS</span>
-                <span class="chip">JavaScript</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="block">
-          <div class="terminal">
-            <div class="terminal-head">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-              <span class="terminal-title">contact.sh</span>
-            </div>
-            <div class="terminal-body">
-              <h2 class="visually-hidden">Contact</h2>
-              <p><span class="prompt">$</span> <span class="cmd">./contact.sh --connect</span></p>
-              <p class="output">Let's connect. Email me, or reach out via the channels below.</p>
-
-              <a href="mailto:yansenaja990@gmail.com" class="contact-row">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <span class="contact-k">email</span><span class="sep">→</span><span class="contact-v">yansenaja990@gmail.com</span>
-              </a>
-
-              <a href="https://github.com/original-jansen" target="_blank" rel="noopener" class="contact-row">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                <span class="contact-k">github</span><span class="sep">→</span><span class="contact-v">@original-jansen</span>
-              </a>
-
-              <a href="https://www.linkedin.com/in/jansen-7310b9354/" target="_blank" rel="noopener" class="contact-row">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                <span class="contact-k">linkedin</span><span class="sep">→</span><span class="contact-v">jansen</span>
-              </a>
-
-              <p class="prompt-line"><span class="prompt">$</span> <span class="cursor" aria-hidden="true"></span></p>
-            </div>
-          </div>
-        </section>
-
-        <footer class="footer">
-          <p>// © 2025 Jansen · built with <code class="tk">html</code> + <code class="tk">css</code></p>
-        </footer>
-      </main>
+    <!-- Projects header -->
+    <div class="section-head" id="projects">
+      <h2>Things I've built</h2>
+      <p class="hand-small">— small but earnest projects</p>
     </div>
 
-    <!-- Status Bar -->
-    <footer class="statusbar" aria-label="Status bar">
-      <div class="status-left">
-        <span class="status-item status-ok">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          ready
-        </span>
-        <span class="status-item">main</span>
-        <span class="status-item">UTF-8</span>
+    <!-- Project 1 -->
+    <article class="card card-project">
+      <div class="project-thumb thumb-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
       </div>
-      <div class="status-right">
-        <span class="status-item">Go 1.22</span>
-        <span class="status-item">Ln <span id="ln">1</span>, Col 1</span>
-        <span class="status-item">Spaces: 2</span>
+      <div class="project-body">
+        <h3>Donation Management System</h3>
+        <p>Web app for managing donations, users, and roles with admin workflows.</p>
+        <div class="tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">MySQL</span>
+        </div>
+        <a href="https://github.com/original-jansen/donation-web" target="_blank" rel="noopener" class="project-link">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="card card-project">
+      <div class="project-thumb thumb-2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+      </div>
+      <div class="project-body">
+        <h3>Simple CRUD</h3>
+        <p>A small full-stack CRUD app — Go backend, MongoDB store, plain JS UI.</p>
+        <div class="tags">
+          <span class="tag">Golang</span>
+          <span class="tag">MongoDB</span>
+        </div>
+        <a href="https://github.com/original-jansen/simple-CRUD" target="_blank" rel="noopener" class="project-link">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="card card-project">
+      <div class="project-thumb thumb-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div class="project-body">
+        <h3>E-Learning Web</h3>
+        <p>An interactive learning site with responsive layout and clean components.</p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JS</span>
+        </div>
+        <a href="https://github.com/original-jansen/e-learning" target="_blank" rel="noopener" class="project-link">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- Skills -->
+    <section id="skills" class="card card-skills" aria-labelledby="skills-h">
+      <p class="card-eyebrow">Toolbox</p>
+      <h2 id="skills-h">Tech I work with</h2>
+      <div class="chip-cloud">
+        <span class="chip chip-lg">Golang</span>
+        <span class="chip">Java</span>
+        <span class="chip chip-lg">Spring Boot</span>
+        <span class="chip">PHP</span>
+        <span class="chip">Python</span>
+        <span class="chip">C++</span>
+        <span class="chip">SQL</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">MongoDB</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">Bootstrap</span>
+        <span class="chip">Git</span>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="card card-quote" aria-label="A note">
+      <svg class="quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 7H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H4v2h1a4 4 0 0 0 4-4zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4z"/></svg>
+      <p class="quote">Make it correct, then make it fast — never the other way around.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card card-contact" aria-labelledby="contact-h">
+      <p class="card-eyebrow">Contact</p>
+      <h2 id="contact-h">Let's build something</h2>
+      <p>Got an idea, a question, or just want to chat about backend stuff? My inbox is open.</p>
+      <div class="contact-actions">
+        <a href="mailto:yansenaja990@gmail.com" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          yansenaja990@gmail.com
+        </a>
+        <div class="socials">
+          <a href="https://github.com/original-jansen" target="_blank" rel="noopener" class="social" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jansen-7310b9354/" target="_blank" rel="noopener" class="social" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with care · <span class="hand-small">© 2025 Jansen</span></p>
     </footer>
-  </div>
+  </main>
 
   <script>
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (!target) return;
+        const t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // Active tab on scroll
-    const tabs = document.querySelectorAll('.tab');
-    const sections = ['hero','about','portfolio','skills','contact']
-      .map(id => document.getElementById(id))
-      .filter(Boolean);
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(ent => {
-        if (ent.isIntersecting) {
-          tabs.forEach(t => t.classList.toggle('tab-active', t.dataset.target === ent.target.id));
-        }
-      });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-    sections.forEach(s => io.observe(s));
-
-    // Faux Ln counter
-    const ln = document.getElementById('ln');
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight || 1);
-      const val = Math.max(1, Math.round(pct * 420));
-      if (val !== lastScroll) { ln.textContent = val; lastScroll = val; }
-    }, { passive: true });
-
-    // Theme toggle
     const root = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light') root.classList.add('light');
+    if (localStorage.getItem('theme') === 'dark') root.classList.add('dark');
     document.querySelector('.theme-toggle').addEventListener('click', () => {
-      root.classList.toggle('light');
-      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
+      root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
     });
+
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const reveal = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); reveal.unobserve(e.target); }});
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.card, .section-head').forEach(el => reveal.observe(el));
+    } else {
+      document.querySelectorAll('.card, .section-head').forEach(el => el.classList.add('in'));
+    }
   </script>
 </body>
 </html>
