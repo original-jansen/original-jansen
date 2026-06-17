@@ -35,16 +35,16 @@
         <span class="status"><span class="status-dot"></span>Available for work</span>
       </p>
       <h1 class="display">
-        Backend developer<br>
-        building <em>simple,</em><br>
-        durable systems.
+        <span class="line"><span>Backend developer</span></span>
+        <span class="line"><span>building <em>simple,</em></span></span>
+        <span class="line"><span>durable systems.</span></span>
       </h1>
       <p class="sub">Information Systems student in Indonesia. I write Go, Java, and PHP — and care more about clarity than cleverness.</p>
     </section>
 
     <hr class="rule">
 
-    <section id="work">
+    <section id="work" data-reveal>
       <header class="section-head">
         <h2>Selected work</h2>
         <span class="meta">2023 — 2024</span>
@@ -86,7 +86,7 @@
 
     <hr class="rule">
 
-    <section id="about">
+    <section id="about" data-reveal>
       <header class="section-head">
         <h2>About</h2>
         <span class="meta">A short note</span>
@@ -99,7 +99,7 @@
 
     <hr class="rule">
 
-    <section>
+    <section data-reveal>
       <header class="section-head">
         <h2>Tools</h2>
         <span class="meta">What I reach for</span>
@@ -116,7 +116,7 @@
 
     <hr class="rule">
 
-    <section id="contact">
+    <section id="contact" data-reveal>
       <header class="section-head">
         <h2>Contact</h2>
         <span class="meta">Say hello</span>
@@ -154,6 +154,29 @@
         t.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduced) {
+      requestAnimationFrame(() => document.body.classList.add('loaded'));
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+      document.querySelectorAll('.works li').forEach((li, i) => {
+        li.style.setProperty('--i', i);
+      });
+    } else {
+      document.body.classList.add('loaded', 'reduced');
+    }
   </script>
 </body>
 </html>
