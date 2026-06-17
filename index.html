@@ -3,89 +3,377 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jansen's Personal Portfolio" />
-  <title>Jansen's Portfolio</title>
+  <meta name="description" content="Jansen — Backend Developer Portfolio" />
+  <title>jansen@portfolio: ~/</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style2.css" />
 </head>
 
 <body>
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-content">
-      <img src="images/profiles.png" alt="Jansen Profile Photo" class="profile-pic">
-      <h1>Hello, I'm <span>Jansen 👋</span></h1>
-      <p>Information Systems student passionate about backend development, data systems, and technology innovation.</p>
-      <a href="#portfolio" class="btn">View My Work</a>
-    </div>
-  </section>
+  <!-- IDE Window -->
+  <div class="ide">
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a 20-year-old Information Systems student focused on backend development and data-driven systems. 
-    <p></p>I have hands-on experience with Golang, Spring Boot, and PHP. I love building efficient systems and constantly improving my coding craft.</p>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Donation Management System</h3>
-        <p>Web app for managing donations, users, and roles. Built with Spring Boot and MySQL.</p>
-        <a href="https://github.com/original-jansen/donation-web" target="_blank">🔗 View Project</a>
+    <!-- Title Bar -->
+    <header class="titlebar">
+      <div class="window-controls" aria-hidden="true">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
       </div>
-      <div class="project-card">
-        <h3>Simple CRUD</h3>
-        <p>CRUD app using HTML, JavaScript, CSS, MongoDB, and Golang.</p>
-        <a href="https://github.com/original-jansen/simple-CRUD" target="_blank">🔗 View Project</a>
+      <div class="titlebar-title">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        </svg>
+        <span>jansen@portfolio: ~/projects</span>
       </div>
-      <div class="project-card">
-        <h3>E-Learning Web</h3>
-        <p>Interactive web using HTML, CSS, Bootstrap, and JavaScript</p>
-        <a href="https://github.com/original-jansen/e-learning" target="_blank">🔗 View Project</a>
+      <div class="titlebar-actions">
+        <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <span>Golang</span>
-      <span>Spring Boot</span>
-      <span>PHP</span>
-      <span>Python</span>
-      <span>SQL</span>
-      <span>HTML / CSS</span>
-      <span>C++</span>
-    </div>
-  </section>
+    <!-- Tab Bar -->
+    <nav class="tabbar" aria-label="File tabs">
+      <a href="#hero" class="tab tab-active" data-target="hero">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        index.go
+      </a>
+      <a href="#about" class="tab" data-target="about">about.md</a>
+      <a href="#portfolio" class="tab" data-target="portfolio">projects.json</a>
+      <a href="#skills" class="tab" data-target="skills">skills.yml</a>
+      <a href="#contact" class="tab" data-target="contact">contact.sh</a>
+    </nav>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Let's connect! Feel free to reach out via email or check my profiles below.</p>
-    <p><a href="mailto:yansenaja990@gmail.com" class="email">📩 yansenaja990.com</a></p>
-    <div class="social-links">
-      <a href="https://github.com/original-jansen" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/jansen-7310b9354/" target="_blank">LinkedIn</a>
-    </div>
-  </section>
+    <!-- Main Layout -->
+    <div class="layout">
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Jansen. Crafted with 💻 and ☕</p>
-  </footer>
+      <!-- Sidebar (file tree) -->
+      <aside class="sidebar" aria-label="Explorer">
+        <div class="sidebar-section">
+          <div class="sidebar-heading">EXPLORER</div>
+          <ul class="filetree">
+            <li class="folder open">
+              <svg class="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              <span>portfolio</span>
+            </li>
+            <li class="file file-active"><span class="dot-go"></span>index.go</li>
+            <li class="file"><span class="dot-md"></span>about.md</li>
+            <li class="file"><span class="dot-json"></span>projects.json</li>
+            <li class="file"><span class="dot-yml"></span>skills.yml</li>
+            <li class="file"><span class="dot-sh"></span>contact.sh</li>
+            <li class="file"><span class="dot-mod"></span>go.mod</li>
+            <li class="file"><span class="dot-md"></span>README.md</li>
+          </ul>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-heading">OUTLINE</div>
+          <ul class="outline">
+            <li><a href="#hero">› main()</a></li>
+            <li><a href="#about">› about</a></li>
+            <li><a href="#portfolio">› projects[]</a></li>
+            <li><a href="#skills">› skills[]</a></li>
+            <li><a href="#contact">› contact()</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Editor Area -->
+      <main class="editor">
+
+        <!-- Hero: terminal -->
+        <section id="hero" class="block">
+          <div class="terminal" aria-label="Terminal">
+            <div class="terminal-head">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="terminal-title">zsh — jansen@portfolio</span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="prompt">$</span> <span class="cmd">whoami</span></p>
+              <div class="hero-row">
+                <img src="images/profiles.png" alt="Jansen" class="avatar">
+                <div>
+                  <h1>Jansen <span class="wave" aria-hidden="true">_</span></h1>
+                  <p class="role">// Information Systems student · backend &amp; data systems</p>
+                  <p class="kv"><span class="k">location</span><span class="sep">=</span><span class="v">"Indonesia"</span></p>
+                  <p class="kv"><span class="k">stack</span><span class="sep">=</span><span class="v">["Golang", "Spring Boot", "PHP"]</span></p>
+                  <p class="kv"><span class="k">status</span><span class="sep">=</span><span class="v ok">"open to opportunities"</span></p>
+                </div>
+              </div>
+              <p><span class="prompt">$</span> <span class="cmd">cat intro.txt</span></p>
+              <p class="output">Backend developer building efficient, data-driven systems. I sweat the details on schemas, queries, and APIs that don't fall over at 2&nbsp;AM.</p>
+              <p>
+                <span class="prompt">$</span>
+                <a href="#portfolio" class="btn-cli">./view_projects.sh
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <span class="cursor" aria-hidden="true"></span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="block code-block">
+          <div class="block-head">
+            <span class="block-name">about.md</span>
+            <span class="block-meta">42 lines · UTF-8 · Markdown</span>
+          </div>
+          <div class="code">
+            <div class="gutter">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+            </div>
+            <div class="content">
+              <h2 class="h-md"># About</h2>
+              <p class="line"></p>
+              <p class="line">I'm a <strong>20-year-old Information Systems student</strong> focused on backend</p>
+              <p class="line">development and data-driven systems.</p>
+              <p class="line"></p>
+              <p class="line">Hands-on with <code class="tk">Golang</code>, <code class="tk">Spring Boot</code>, and <code class="tk">PHP</code>. I enjoy</p>
+              <p class="line">designing efficient systems, modeling clean schemas,</p>
+              <p class="line">and writing services that age well.</p>
+              <p class="line"></p>
+              <p class="line">&gt; "Make it correct, then make it fast — never the other way around."</p>
+              <p class="line"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="portfolio" class="block code-block">
+          <div class="block-head">
+            <span class="block-name">projects.json</span>
+            <span class="block-meta">3 entries · JSON</span>
+          </div>
+          <div class="code">
+            <div class="gutter gutter-json">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+            </div>
+            <div class="content">
+              <h2 class="visually-hidden">Projects</h2>
+              <div class="projects">
+
+                <article class="project-card">
+                  <header class="card-head">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="card-name">donation-web</span>
+                  </header>
+                  <div class="card-body">
+                    <h3>Donation Management System</h3>
+                    <p>Web app for managing donations, users, and roles.</p>
+                    <div class="tags">
+                      <span class="tag">Spring Boot</span>
+                      <span class="tag">MySQL</span>
+                      <span class="tag">Java</span>
+                    </div>
+                    <a href="https://github.com/original-jansen/donation-web" target="_blank" rel="noopener" class="card-link">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                      view source
+                      <svg class="icon arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                  </div>
+                </article>
+
+                <article class="project-card">
+                  <header class="card-head">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="card-name">simple-CRUD</span>
+                  </header>
+                  <div class="card-body">
+                    <h3>Simple CRUD</h3>
+                    <p>CRUD app with a Go backend and MongoDB persistence, plain JS frontend.</p>
+                    <div class="tags">
+                      <span class="tag">Golang</span>
+                      <span class="tag">MongoDB</span>
+                      <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/original-jansen/simple-CRUD" target="_blank" rel="noopener" class="card-link">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                      view source
+                      <svg class="icon arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                  </div>
+                </article>
+
+                <article class="project-card">
+                  <header class="card-head">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="card-name">e-learning</span>
+                  </header>
+                  <div class="card-body">
+                    <h3>E-Learning Web</h3>
+                    <p>Interactive learning interface — responsive layout, components, navigation.</p>
+                    <div class="tags">
+                      <span class="tag">HTML</span>
+                      <span class="tag">CSS</span>
+                      <span class="tag">Bootstrap</span>
+                      <span class="tag">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/original-jansen/e-learning" target="_blank" rel="noopener" class="card-link">
+                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                      view source
+                      <svg class="icon arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="block code-block">
+          <div class="block-head">
+            <span class="block-name">skills.yml</span>
+            <span class="block-meta">YAML</span>
+          </div>
+          <div class="code">
+            <div class="gutter">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+            </div>
+            <div class="content">
+              <h2 class="visually-hidden">Skills</h2>
+              <p class="yml"><span class="yml-key">languages</span>:</p>
+              <div class="chip-row">
+                <span class="chip">Golang</span>
+                <span class="chip">Java</span>
+                <span class="chip">PHP</span>
+                <span class="chip">Python</span>
+                <span class="chip">C++</span>
+              </div>
+              <p class="yml"><span class="yml-key">frameworks</span>:</p>
+              <div class="chip-row">
+                <span class="chip">Spring Boot</span>
+                <span class="chip">Bootstrap</span>
+              </div>
+              <p class="yml"><span class="yml-key">data</span>:</p>
+              <div class="chip-row">
+                <span class="chip">SQL</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">MongoDB</span>
+              </div>
+              <p class="yml"><span class="yml-key">web</span>:</p>
+              <div class="chip-row">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="block">
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="terminal-title">contact.sh</span>
+            </div>
+            <div class="terminal-body">
+              <h2 class="visually-hidden">Contact</h2>
+              <p><span class="prompt">$</span> <span class="cmd">./contact.sh --connect</span></p>
+              <p class="output">Let's connect. Email me, or reach out via the channels below.</p>
+
+              <a href="mailto:yansenaja990@gmail.com" class="contact-row">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span class="contact-k">email</span><span class="sep">→</span><span class="contact-v">yansenaja990@gmail.com</span>
+              </a>
+
+              <a href="https://github.com/original-jansen" target="_blank" rel="noopener" class="contact-row">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <span class="contact-k">github</span><span class="sep">→</span><span class="contact-v">@original-jansen</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/jansen-7310b9354/" target="_blank" rel="noopener" class="contact-row">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <span class="contact-k">linkedin</span><span class="sep">→</span><span class="contact-v">jansen</span>
+              </a>
+
+              <p class="prompt-line"><span class="prompt">$</span> <span class="cursor" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <p>// © 2025 Jansen · built with <code class="tk">html</code> + <code class="tk">css</code></p>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="statusbar" aria-label="Status bar">
+      <div class="status-left">
+        <span class="status-item status-ok">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          ready
+        </span>
+        <span class="status-item">main</span>
+        <span class="status-item">UTF-8</span>
+      </div>
+      <div class="status-right">
+        <span class="status-item">Go 1.22</span>
+        <span class="status-item">Ln <span id="ln">1</span>, Col 1</span>
+        <span class="status-item">Spaces: 2</span>
+      </div>
+    </footer>
+  </div>
 
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    });
+
+    // Active tab on scroll
+    const tabs = document.querySelectorAll('.tab');
+    const sections = ['hero','about','portfolio','skills','contact']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(ent => {
+        if (ent.isIntersecting) {
+          tabs.forEach(t => t.classList.toggle('tab-active', t.dataset.target === ent.target.id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(s => io.observe(s));
+
+    // Faux Ln counter
+    const ln = document.getElementById('ln');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight || 1);
+      const val = Math.max(1, Math.round(pct * 420));
+      if (val !== lastScroll) { ln.textContent = val; lastScroll = val; }
+    }, { passive: true });
+
+    // Theme toggle
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') root.classList.add('light');
+    document.querySelector('.theme-toggle').addEventListener('click', () => {
+      root.classList.toggle('light');
+      localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
     });
   </script>
 </body>
