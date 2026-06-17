@@ -3,60 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jansen — Information Systems student, backend developer." />
-  <title>Jansen</title>
+  <meta name="description" content="Jansen — Information Systems student building backend systems." />
+  <title>Jansen — Backend developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style2.css" />
 </head>
 <body>
+
+  <header class="top">
+    <a href="#" class="mark" aria-label="Home">
+      <span class="mark-dot"></span>Jansen
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" aria-label="Toggle theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </header>
+
   <main>
-    <header>
-      <h1>Jansen</h1>
-      <p class="lead">Information Systems student. I work on backend systems and data — mostly in Go, Java, and PHP.</p>
-    </header>
 
-    <section>
-      <h2>About</h2>
-      <p>I'm 20, based in Indonesia, currently studying Information Systems. I care about software that's simple, correct, and easy to maintain. I read a lot, write code, and drink more coffee than I probably should.</p>
+    <section class="hero">
+      <p class="eyebrow">
+        <span class="status"><span class="status-dot"></span>Available for work</span>
+      </p>
+      <h1 class="display">
+        Backend developer<br>
+        building <em>simple,</em><br>
+        durable systems.
+      </h1>
+      <p class="sub">Information Systems student in Indonesia. I write Go, Java, and PHP — and care more about clarity than cleverness.</p>
     </section>
 
-    <section>
-      <h2>Work</h2>
-      <ul class="list">
+    <hr class="rule">
+
+    <section id="work">
+      <header class="section-head">
+        <h2>Selected work</h2>
+        <span class="meta">2023 — 2024</span>
+      </header>
+
+      <ul class="works">
         <li>
-          <a href="https://github.com/original-jansen/donation-web" target="_blank" rel="noopener">Donation Management System</a>
-          <span>A web app for managing donations, users, and roles. Spring Boot, MySQL.</span>
+          <a href="https://github.com/original-jansen/donation-web" target="_blank" rel="noopener">
+            <span class="year">2024</span>
+            <span class="title">Donation Management System</span>
+            <span class="stack">Spring Boot · MySQL</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
         </li>
         <li>
-          <a href="https://github.com/original-jansen/simple-CRUD" target="_blank" rel="noopener">Simple CRUD</a>
-          <span>Full-stack CRUD with a Go backend and MongoDB store.</span>
+          <a href="https://github.com/original-jansen/simple-CRUD" target="_blank" rel="noopener">
+            <span class="year">2024</span>
+            <span class="title">Simple CRUD</span>
+            <span class="stack">Go · MongoDB</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
         </li>
         <li>
-          <a href="https://github.com/original-jansen/e-learning" target="_blank" rel="noopener">E-Learning Web</a>
-          <span>Responsive learning interface built with HTML, CSS, and JavaScript.</span>
+          <a href="https://github.com/original-jansen/e-learning" target="_blank" rel="noopener">
+            <span class="year">2023</span>
+            <span class="title">E-Learning Web</span>
+            <span class="stack">HTML · CSS · JavaScript</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
         </li>
       </ul>
     </section>
 
-    <section>
-      <h2>Tools</h2>
-      <p class="tools">Go, Java, Spring Boot, PHP, Python, C++, SQL, MySQL, MongoDB, HTML, CSS, JavaScript, Git.</p>
+    <hr class="rule">
+
+    <section id="about">
+      <header class="section-head">
+        <h2>About</h2>
+        <span class="meta">A short note</span>
+      </header>
+      <div class="prose">
+        <p>I'm an Information Systems student focused on backend engineering and data. Most of my time goes into Go and the JVM, with a soft spot for clean schemas, predictable APIs, and tests that earn their keep.</p>
+        <p>I prefer software that's <em>boring in the best way</em>: small surfaces, clear failures, and the kind of code a new teammate can read on day one.</p>
+      </div>
     </section>
 
+    <hr class="rule">
+
     <section>
-      <h2>Elsewhere</h2>
-      <ul class="list inline">
-        <li><a href="mailto:yansenaja990@gmail.com">Email</a></li>
-        <li><a href="https://github.com/original-jansen" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/jansen-7310b9354/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <header class="section-head">
+        <h2>Tools</h2>
+        <span class="meta">What I reach for</span>
+      </header>
+      <div class="tools">
+        <dl>
+          <div><dt>Languages</dt><dd>Go, Java, PHP, Python, C++</dd></div>
+          <div><dt>Frameworks</dt><dd>Spring Boot, Bootstrap</dd></div>
+          <div><dt>Data</dt><dd>MySQL, MongoDB, SQL</dd></div>
+          <div><dt>Web</dt><dd>HTML, CSS, JavaScript</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="contact">
+      <header class="section-head">
+        <h2>Contact</h2>
+        <span class="meta">Say hello</span>
+      </header>
+      <p class="big-link">
+        <a href="mailto:yansenaja990@gmail.com">yansenaja990@gmail.com<svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </p>
+      <ul class="elsewhere">
+        <li><a href="https://github.com/original-jansen" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/jansen-7310b9354/" target="_blank" rel="noopener">LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></li>
       </ul>
     </section>
 
-    <footer>
-      <p>© 2025</p>
+    <footer class="bottom">
+      <span>© 2025 Jansen</span>
+      <span class="meta">Built with HTML &amp; CSS</span>
     </footer>
   </main>
+
+  <script>
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved) root.dataset.theme = saved;
+    document.querySelector('.theme').addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      localStorage.setItem('theme', next);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (!t || a.getAttribute('href') === '#') return;
+        e.preventDefault();
+        t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 </body>
 </html>
